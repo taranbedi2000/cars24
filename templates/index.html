@@ -1,0 +1,480 @@
+
+<html>
+	<head>
+		<title>Sell Car Price ion</title>
+		
+		<style type="text/css">
+			.input {
+				width: 98%;
+				height: 33px;
+				border-radius: 03px;
+				border: solid 1px #000;
+				background: transparent;
+				color: #000;
+				font-weight: bold;
+				padding: 05px;
+				font-size: 20px;
+				text-transform: capitalize;
+			}
+			.ab {
+				width: 100%;
+				background: #38516f;
+				height: 39px;
+				border: solid 1px #111165;
+				font-size: 15px;
+				color: #000;
+				font-weight: bold;
+				cursor: pointer;
+			}
+		</style>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+	</head> 
+	<body class="img-fluid" style="background-image:url('static/images/bg.jpg');background-repeat:no-repeat;background-size:cover" >
+	<div style="height: 680px;width: 700px;position: absolute;left: 50px;top: 50px;border-radius: 5px;background: #d2d2d2b3;padding: 15px;color: #000;margin-left:25%">
+	
+	
+	<div>
+		<h1 class="article-title__title" style="text-align: center; font-family:Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif">Car24 Used Car Price Prediction</h1>
+		<hr>
+		<form action="{{ url_for('predict')}}"method="post">
+			<div style="float: left; width: 48%">
+				<label style="text-align: left; margin-bottom: 05px">Year</label>
+				<select name="year" class="input" style="height: 35px;" required>
+					
+					<option value="2">2</option>
+					
+					<option value="3">3</option>
+					
+					<option value="4">4</option>
+					
+					<option value="5">5</option>
+					
+					<option value="6">6</option>
+					
+					<option value="7">7</option>
+					
+					<option value="8">8</option>
+					
+					<option value="9">9</option>
+					
+					<option value="10">10</option>
+					
+					<option value="11">11</option>
+					
+					<option value="12">12</option>
+					
+					<option value="13">13</option>
+					
+					<option value="14">14</option>
+					
+					<option value="15">15</option>
+					
+					<option value="16">16</option>
+					
+					<option value="17">17</option>
+					
+					<option value="18">18</option>
+					
+					<option value="19">19</option>
+					
+					<option value="20">20</option>
+					
+					<option value="21">21</option>
+					
+					<option value="22">22</option>
+					
+					<option value="23">23</option>
+					
+				</select> <br><br>
+
+				<label style="text-align: left;">Driven Kilometers (e.g 10000) In KM</label>
+				<input type="text" name="driven_kilometeres" class="input" required> 
+				<br><br>
+
+				<label style="text-align: left;">Mileage (e.g 10) KM/L</label>
+				<input type="text" name="mileage" class="input" required>
+				<br><br>
+
+				<label style="text-align: left;">Engine (CC)</label>
+				<input type="text" name="engine" class="input" required>
+				<br><br>
+
+				<label style="text-align: left;">Power (BHP)</label>
+				<input type="text" name="power" class="input" required>
+				<br><br>
+
+				<label style="text-align: left;">Company</label>
+				<select name="company" class="input" style="height: 35px;" required>
+					
+					<option value="bmw">bmw</option>
+					
+					<option value="fiat">fiat</option>
+					
+					<option value="tata">tata</option>
+					
+					<option value="datsun">datsun</option>
+					
+					<option value="volvo">volvo</option>
+					
+					<option value="honda">honda</option>
+					
+					<option value="mitsubishi">mitsubishi</option>
+					
+					<option value="audi">audi</option>
+					
+					<option value="force">force</option>
+					
+					<option value="toyota">toyota</option>
+					
+					<option value="ford">ford</option>
+					
+					<option value="smart">smart</option>
+					
+					<option value="ambassador">ambassador</option>
+					
+					<option value="isuzu">isuzu</option>
+					
+					<option value="nissan">nissan</option>
+					
+					<option value="mercedes-benz">mercedes-benz</option>
+					
+					<option value="mini">mini</option>
+					
+					<option value="skoda">skoda</option>
+					
+					<option value="jaguar">jaguar</option>
+					
+					<option value="chevrolet">chevrolet</option>
+					
+					<option value="volkswagen">volkswagen</option>
+					
+					<option value="porsche">porsche</option>
+					
+					<option value="jeep">jeep</option>
+					
+					<option value="hyundai">hyundai</option>
+					
+					<option value="land">land</option>
+					
+					<option value="maruti">maruti</option>
+					
+					<option value="bentley">bentley</option>
+					
+					<option value="lamborghini">lamborghini</option>
+					
+					<option value="mahindra">mahindra</option>
+					
+					<option value="renault">renault</option>
+					
+					<option value="isuzu">isuzu</option>
+					
+				</select> <br><br>
+			</div>
+
+			<div style="float: right; width: 48%">
+				<label style="text-align: left;">Seats (e.g 4,5)</label>
+				<input type="text" name="seats" class="input" required>
+				<br><br>
+
+				<label style="text-align: left;">Model</label>
+				<select name="model" class="input" style="height: 35px;" required>
+					
+					<option value="volkswagen polo diesel comfortline 1.2l">volkswagen polo diesel comfortline 1.2l</option>
+					
+					<option value="volkswagen vento diesel highline">volkswagen vento diesel highline</option>
+					
+					<option value="audi a6 2011-2015 2.0 tdi premium plus">audi a6 2011-2015 2.0 tdi premium plus</option>
+					
+					<option value="hyundai i10 magna 1.2">hyundai i10 magna 1.2</option>
+					
+					<option value="hyundai i20 1.2 magna">hyundai i20 1.2 magna</option>
+					
+					<option value="hyundai i10 magna">hyundai i10 magna</option>
+					
+					<option value="maruti alto 800 2016-2019 lxi">maruti alto 800 2016-2019 lxi</option>
+					
+					<option value="chevrolet beat ls">chevrolet beat ls</option>
+					
+					<option value="honda city i vtec sv">honda city i vtec sv</option>
+					
+					<option value="chevrolet beat lt">chevrolet beat lt</option>
+					
+					<option value="maruti wagon r lxi cng">maruti wagon r lxi cng</option>
+					
+					<option value="maruti swift dzire vxi">maruti swift dzire vxi</option>
+					
+					<option value="honda amaze s i-vtech">honda amaze s i-vtech</option>
+					
+					<option value="hyundai i10 sportz 1.2">hyundai i10 sportz 1.2</option>
+					
+					<option value="hyundai i20 1.2 sportz">hyundai i20 1.2 sportz</option>
+					
+					<option value="hyundai i20 asta 1.4 crdi">hyundai i20 asta 1.4 crdi</option>
+					
+					<option value="ford ecosport 1.5 dv5 mt titanium">ford ecosport 1.5 dv5 mt titanium</option>
+					
+					<option value="hyundai i20 asta option 1.2">hyundai i20 asta option 1.2</option>
+					
+					<option value="hyundai grand i10 1.2 kappa sportz">hyundai grand i10 1.2 kappa sportz</option>
+					
+					<option value="hyundai i20 sportz 1.2">hyundai i20 sportz 1.2</option>
+					
+					<option value="maruti celerio vxi at">maruti celerio vxi at</option>
+					
+					<option value="hyundai santro xing gls">hyundai santro xing gls</option>
+					
+					<option value="honda city 1.5 v mt">honda city 1.5 v mt</option>
+					
+					<option value="volkswagen polo 1.2 mpi highline">volkswagen polo 1.2 mpi highline</option>
+					
+					<option value="hyundai grand i10 crdi magna">hyundai grand i10 crdi magna</option>
+					
+					<option value="maruti swift zdi">maruti swift zdi</option>
+					
+					<option value="hyundai grand i10 at asta">hyundai grand i10 at asta</option>
+					
+					<option value="volkswagen polo 1.5 tdi highline">volkswagen polo 1.5 tdi highline</option>
+					
+					<option value="maruti wagon r lxi">maruti wagon r lxi</option>
+					
+					<option value="bmw 5 series 520d luxury line">bmw 5 series 520d luxury line</option>
+					
+					<option value="honda city i vtec cvt vx">honda city i vtec cvt vx</option>
+					
+					<option value="renault duster 85ps diesel rxl">renault duster 85ps diesel rxl</option>
+					
+					<option value="mercedes-benz new c-class c 220d avantgarde edition c">mercedes-benz new c-class c 220d avantgarde edition c</option>
+					
+					<option value="hyundai i10 sportz">hyundai i10 sportz</option>
+					
+					<option value="maruti vitara brezza zdi plus dual tone">maruti vitara brezza zdi plus dual tone</option>
+					
+					<option value="hyundai eon era plus">hyundai eon era plus</option>
+					
+					<option value="maruti wagon r vxi">maruti wagon r vxi</option>
+					
+					<option value="ford figo petrol zxi">ford figo petrol zxi</option>
+					
+					<option value="ford figo diesel exi">ford figo diesel exi</option>
+					
+					<option value="maruti swift dzire vdi">maruti swift dzire vdi</option>
+					
+					<option value="audi a4 2.0 tdi">audi a4 2.0 tdi</option>
+					
+					<option value="hyundai verna 1.6 sx">hyundai verna 1.6 sx</option>
+					
+					<option value="ford figo diesel zxi">ford figo diesel zxi</option>
+					
+					<option value="maruti alto lxi">maruti alto lxi</option>
+					
+					<option value="mahindra xuv500 w8 4wd">mahindra xuv500 w8 4wd</option>
+					
+					<option value="maruti ritz vdi">maruti ritz vdi</option>
+					
+					<option value="maruti alto lxi bsiii">maruti alto lxi bsiii</option>
+					
+					<option value="audi q7 3.0 tdi quattro premium plus">audi q7 3.0 tdi quattro premium plus</option>
+					
+					<option value="hyundai grand i10 asta">hyundai grand i10 asta</option>
+					
+					<option value="hyundai verna 1.6 sx crdi (o)">hyundai verna 1.6 sx crdi (o)</option>
+					
+					<option value="maruti swift dzire vxi">maruti swift dzire vxi</option>
+					
+					<option value="maruti swift dzire vdi">maruti swift dzire vdi</option>
+					
+					<option value="bmw x1 sdrive20d">bmw x1 sdrive20d</option>
+					
+					<option value="hyundai creta 1.6 crdi sx option">hyundai creta 1.6 crdi sx option</option>
+					
+					<option value="maruti swift vxi bsiv">maruti swift vxi bsiv</option>
+					
+					<option value="toyota fortuner 4x2 manual">toyota fortuner 4x2 manual</option>
+					
+					<option value="hyundai i10 era">hyundai i10 era</option>
+					
+					<option value="toyota innova crysta 2.8 zx at">toyota innova crysta 2.8 zx at</option>
+					
+					<option value="hyundai creta 1.6 crdi sx">hyundai creta 1.6 crdi sx</option>
+					
+					<option value="volkswagen polo petrol comfortline 1.2l">volkswagen polo petrol comfortline 1.2l</option>
+					
+					<option value="hyundai grand i10 sportz">hyundai grand i10 sportz</option>
+					
+					<option value="maruti wagon r vxi bs iv">maruti wagon r vxi bs iv</option>
+					
+					<option value="honda city i dtec vx">honda city i dtec vx</option>
+					
+					<option value="maruti ertiga vdi">maruti ertiga vdi</option>
+					
+					<option value="ford ecosport 1.5 dv5 mt titanium optional">ford ecosport 1.5 dv5 mt titanium optional</option>
+					
+					<option value="maruti swift vdi">maruti swift vdi</option>
+					
+					<option value="honda amaze vx i-dtec">honda amaze vx i-dtec</option>
+					
+					<option value="honda brio s mt">honda brio s mt</option>
+					
+					<option value="mahindra xuv500 w6 2wd">mahindra xuv500 w6 2wd</option>
+					
+					<option value="maruti wagon r lxi bs iv">maruti wagon r lxi bs iv</option>
+					
+					<option value="audi a4 2.0 tdi 177 bhp premium plus">audi a4 2.0 tdi 177 bhp premium plus</option>
+					
+					<option value="volkswagen polo diesel trendline 1.2l">volkswagen polo diesel trendline 1.2l</option>
+					
+					<option value="mahindra xuv500 w10 2wd">mahindra xuv500 w10 2wd</option>
+					
+					<option value="bmw 3 series 320d">bmw 3 series 320d</option>
+					
+					<option value="toyota innova 2.5 v diesel 7-seater">toyota innova 2.5 v diesel 7-seater</option>
+					
+					<option value="hyundai eon d lite plus">hyundai eon d lite plus</option>
+					
+					<option value="maruti alto k10 vxi">maruti alto k10 vxi</option>
+					
+					<option value="honda city 1.5 s mt">honda city 1.5 s mt</option>
+					
+					<option value="maruti alto 800 lxi">maruti alto 800 lxi</option>
+					
+					<option value="hyundai grand i10 crdi sportz">hyundai grand i10 crdi sportz</option>
+					
+					<option value="volkswagen polo diesel highline 1.2l">volkswagen polo diesel highline 1.2l</option>
+					
+					<option value="other">other</option>
+					
+					<option value="skoda superb elegance 1.8 tsi at">skoda superb elegance 1.8 tsi at</option>
+					
+					<option value="toyota innova 2.5 g (diesel) 8 seater">toyota innova 2.5 g (diesel) 8 seater</option>
+					
+					<option value="maruti alto k10 2010-2014 vxi">maruti alto k10 2010-2014 vxi</option>
+					
+					<option value="ford figo diesel titanium">ford figo diesel titanium</option>
+					
+					<option value="maruti swift dzire ldi">maruti swift dzire ldi</option>
+					
+					<option value="maruti swift vdi bsiv">maruti swift vdi bsiv</option>
+					
+					<option value="jaguar xf 2.2 litre luxury">jaguar xf 2.2 litre luxury</option>
+					
+					<option value="toyota fortuner 3.0 diesel">toyota fortuner 3.0 diesel</option>
+					
+					<option value="hyundai verna 1.6 sx vtvt">hyundai verna 1.6 sx vtvt</option>
+					
+					<option value="honda city i vtec v">honda city i vtec v</option>
+					
+					<option value="mahindra xuv500 w8 2wd">mahindra xuv500 w8 2wd</option>
+					
+					<option value="renault duster 110ps diesel rxz">renault duster 110ps diesel rxz</option>
+					
+					<option value="hyundai i20 sportz 1.4 crdi">hyundai i20 sportz 1.4 crdi</option>
+					
+					<option value="volkswagen vento petrol highline">volkswagen vento petrol highline</option>
+					
+					<option value="volkswagen polo petrol highline 1.2l">volkswagen polo petrol highline 1.2l</option>
+					
+					<option value="toyota fortuner 4x2 at">toyota fortuner 4x2 at</option>
+					
+					<option value="bmw 3 series 320d luxury line">bmw 3 series 320d luxury line</option>
+					
+					<option value="volkswagen vento 1.5 tdi highline">volkswagen vento 1.5 tdi highline</option>
+					
+					<option value="renault kwid rxt">renault kwid rxt</option>
+					
+					<option value="honda amaze s i-dtech">honda amaze s i-dtech</option>
+					
+					<option value="hyundai verna 1.6 sx vtvt (o)">hyundai verna 1.6 sx vtvt (o)</option>
+					
+					<option value="maruti ertiga zdi">maruti ertiga zdi</option>
+					
+				</select> <br><br>
+
+				<label style="text-align: left;">Location</label>
+				<select name="location" class="input" style="height: 35px;" required>
+					
+					<option value="coimbatore">coimbatore</option>
+					
+					<option value="chennai">chennai</option>
+					
+					<option value="ahmedabad">ahmedabad</option>
+					
+					<option value="hyderabad">hyderabad</option>
+					
+					<option value="jaipur">jaipur</option>
+					
+					<option value="pune">pune</option>
+					
+					<option value="delhi">delhi</option>
+					
+					<option value="kolkata">kolkata</option>
+					
+					<option value="kochi">kochi</option>
+					
+					<option value="bangalore">bangalore</option>
+					
+					<option value="mumbai">mumbai</option>
+					
+				</select> <br><br>
+
+				<label style="text-align: left;">Fuel Type</label>
+				<select name="fuel_type" class="input" style="height: 35px;" required>
+					
+					<option value="lpg">lpg</option>
+					
+					<option value="diesel">diesel</option>
+					
+					<option value="petrol">petrol</option>
+					
+					<option value="cng">cng</option>
+					
+				</select> <br><br>
+
+				<label style="text-align: left;">Transmission</label>
+				<select name="transmission" class="input" style="height: 35px;" required>
+					
+					<option value="manual">manual</option>
+					
+					<option value="automatic">automatic</option>
+					
+				</select>
+				<br><br>
+
+				<label style="text-align: left;">Owner Type</label>
+				<select name="owner_type" class="input" style="height: 35px;" required>
+					
+					<option value="first">first</option>
+					<option value="second">second</option>
+					<option value="third">third</option>
+					<option value="fourth &amp; above">fourth &amp; above</option>
+					
+					
+					
+					
+					
+				</select>
+				<br><br>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div style="width: 100%">
+				
+				
+				<button style="width:120px;height:40px;background-color:#4285F4;border-radius: 5px"><b>ESTIMATE</b></button>
+			</div>
+			
+		</form>
+		
+		<div style="color:green; font-size:22;"><b>{{ prediction_text }}</b></div>
+		<br>
+        <br>
+	
+	</div>
+</body>
+</html>
