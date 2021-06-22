@@ -1,18 +1,4 @@
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[7]:
-
 
 from sklearn import preprocessing
 from sklearn.model_selection import GridSearchCV
@@ -508,87 +494,6 @@ regr = DecisionTreeRegressor(max_depth=2)
 regr.fit(x_train, y_train)
 
 
-# In[ ]:
-
-
-
-
-
-# # Test the model for few cars
-
-# In[ ]:
-
-
-
-
-
-# In[78]:
-
-#
-#def predict_price(year, kilometers_driven, mileage, engine, power, seats, company, name, location, fuel_type, transmission, owner_type):
-#    company_index = np.where(x.columns==company)[0][0]
-#    name_index = np.where(x.columns==name)[0][0]
-#    location_index = np.where(x.columns==location)[0][0]
-#    fuel_type_index = np.where(x.columns==fuel_type)[0][0]
-#    transmission_index = np.where(x.columns==transmission)[0][0]
-#    owner_type_index = np.where(x.columns==owner_type)[0][0]
-#    x2 = np.zeros(len(x.columns))
-#    x2[0] = year
-#    x2[1] = kilometers_driven
-#    x2[2] = mileage
-#    x2[3] = engine
-#    x2[4] = power
-#    x2[5] = seats
-#    if company_index >= 0:
-#        x2[company_index] = 1
-#    if name_index >= 0:
-#        x2[name_index] = 1
-#    if location_index >= 0:
-#        x2[location_index] = 1
-#    if fuel_type_index >= 0:
-#        x2[fuel_type_index] = 1
-#    if transmission_index >= 0:
-#        x2[transmission_index] = 1
-#    if owner_type_index >= 0:
-#        x2[owner_type_index] = 1
-#
-#    result = ([x2])
-#    return result
-
-
-# In[69]:
-#data_unseen = pd.DataFrame([6, 0.052268, 0.324245, 1968, 140.80, 5.0, 'Audi', 'other', 'Coimbatore', 'Diesel', 'Automatic', 'Second'])
-#
-##Audi
-##predict_price(6, 0.052268, 0.324245, 1968, 140.80, 5.0, 'Audi', 'other', 'Coimbatore', 'Diesel', 'Automatic', 'Second')
-#
-#
-## In[72]:
-#
-#
-## For Hundai
-#ab=predict_price(6, 0.052268, 0.424245, 1582, 126.20, 5.0, 'Hyundai', 'Hyundai Creta 1.6 CRDi SX Option', 'Pune', 'Petrol', 'Manual', 'First')
-#
-#
-## In[73]:
-#
-#
-## For Maruti Wagon R
-#predict_price(11, 0.092703, 0.744289, 998, 58.16, 5.0, 'Maruti', 'Maruti Wagon R LXI CNG', 'Mumbai', 'Petrol', 'Manual', 'First')
-#
-
-# In[74]:
-
-
-# We can see below parameters
-x.head()
-
-
-# ## Export the tested model to a pickle file
-
-# In[87]:
-
-
 import pickle
 pickle.dump(knn, open('model.pkl','wb'))
 
@@ -608,8 +513,3 @@ columns = {
 with open("columns.json","w") as f:
     f.write(json.dumps(columns))
 
-
-# # Live Demo
-# https://used-car-valuation-app.herokuapp.com/
-
-# # Thank You
